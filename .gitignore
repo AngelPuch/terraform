@@ -1,0 +1,13 @@
+**/.terraform/*
+.vagrant/
+*.tfstate
+*.tfstate.*
+*.tfplan
+tfplan
+crash.log
+.venv/
+__pycache__/
+*.pyc
+*.db
+backups/
+

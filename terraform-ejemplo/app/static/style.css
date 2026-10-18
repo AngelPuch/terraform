@@ -1,0 +1,227 @@
+:root {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: #202532;
+  background: #f3f4f8;
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1180px;
+  margin: auto;
+  padding: 54px 28px;
+}
+header {
+  margin-bottom: 36px;
+}
+.eyebrow {
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 1.8px;
+  color: #6951b8;
+}
+h1 {
+  font-size: clamp(32px, 4vw, 46px);
+  letter-spacing: -1.6px;
+  margin: 13px 0;
+}
+header p {
+  color: #60677a;
+  font-size: 17px;
+}
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+.tags span,
+.badge {
+  font-size: 12px;
+  padding: 7px 11px;
+  border-radius: 8px;
+  background: #e9e5f6;
+  color: #583e9d;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.card {
+  background: white;
+  border: 1px solid #e2e4ed;
+  border-radius: 17px;
+  padding: 27px;
+  box-shadow: 0 8px 28px #1f254004;
+}
+h2 {
+  font-size: 21px;
+  margin: 10px 0 24px;
+  letter-spacing: -0.5px;
+}
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: 650;
+  margin-bottom: 8px;
+}
+input:not([type="checkbox"]):not([type="hidden"]),
+textarea {
+  font: inherit;
+  font-size: 14px;
+  width: 100%;
+  border: 1px solid #cdd1dd;
+  border-radius: 8px;
+  padding: 11px 12px;
+  margin-bottom: 20px;
+  color: #202532;
+  background: #fcfcfe;
+}
+textarea {
+  resize: vertical;
+}
+.check {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 20px;
+}
+input[type="checkbox"] {
+  accent-color: #6e4dc4;
+  width: 17px;
+  height: 17px;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+button {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  background: #6e4dc4;
+  color: white;
+}
+button:hover {
+  filter: brightness(0.95);
+}
+button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+.secondary {
+  background: #f1eef8;
+  color: #583e9d;
+}
+.danger {
+  background: #fff0f1;
+  color: #ac384c;
+}
+.hint,
+footer {
+  font-size: 12px;
+  line-height: 1.65;
+  color: #70788b;
+}
+.hint {
+  margin: 22px 0 0;
+}
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: start;
+}
+.badge {
+  white-space: nowrap;
+}
+.task {
+  padding: 19px 0;
+  border-top: 1px solid #eceef3;
+}
+.task h3 {
+  font-size: 16px;
+  margin: 0 0 8px;
+  overflow-wrap: anywhere;
+}
+.task p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 14px;
+  color: #687083;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.task-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.status {
+  font-size: 11px;
+  white-space: nowrap;
+  color: #91651d;
+}
+.complete .status {
+  color: #247b59;
+}
+.complete h3 {
+  color: #747b8a;
+  text-decoration: line-through;
+}
+.task .actions button {
+  padding: 7px 10px;
+  font-size: 12px;
+}
+#message {
+  font-size: 13px;
+  min-height: 18px;
+  color: #583e9d;
+}
+.empty {
+  padding: 36px 0;
+  text-align: center;
+  color: #747b8a;
+  font-size: 14px;
+}
+footer {
+  text-align: center;
+  margin-top: 28px;
+}
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #b6a2ed;
+  outline-offset: 2px;
+}
+[hidden] {
+  display: none !important;
+}
+@media (max-width: 800px) {
+  main {
+    padding: 30px 18px;
+  }
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    padding: 23px;
+  }
+}

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ title }}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <span class="eyebrow">TERRAFORM + DOCKER · DEMOSTRACIÓN</span>
+        <h1>{{ title }}</h1>
+        <p>Un CRUD pequeño. Una infraestructura que puedes volver a crear.</p>
+        <div class="tags">
+          <span>Python / Flask</span><span>SQLite persistente</span
+          ><span>Infraestructura como código</span>
+        </div>
+      </header>
+      <div class="layout">
+        <section class="card">
+          <span class="eyebrow">01 / ORGANIZA</span>
+          <h2 id="form-title">Nueva tarea</h2>
+          <form id="task-form">
+            <input type="hidden" id="task-id" />
+            <label for="title">Título</label>
+            <input
+              id="title"
+              name="title"
+              maxlength="120"
+              required
+              placeholder="Ej. Preparar la exposición"
+            />
+            <label for="description">Descripción</label>
+            <textarea
+              id="description"
+              name="description"
+              maxlength="500"
+              rows="4"
+              placeholder="¿Qué necesitamos hacer?"
+            ></textarea>
+            <label class="check"
+              ><input type="checkbox" id="done" /> Tarea completada</label
+            >
+            <div class="actions">
+              <button type="submit" id="save">Crear tarea</button
+              ><button type="button" id="cancel" class="secondary" hidden>
+                Cancelar
+              </button>
+            </div>
+          </form>
+          <p class="hint">
+            Los datos se guardan en /data/tasks.db, dentro de un volumen Docker.
+          </p>
+        </section>
+        <section class="card">
+          <div class="list-header">
+            <div>
+              <span class="eyebrow">02 / DA SEGUIMIENTO</span>
+              <h2>Tareas del proyecto</h2>
+            </div>
+            <span id="count" class="badge">0 tareas</span>
+          </div>
+          <p id="message" role="status" aria-live="polite"></p>
+          <div id="tasks" aria-live="polite"></div>
+        </section>
+      </div>
+      <footer>
+        Terraform administra los recursos · Docker ejecuta la aplicación ·
+        SQLite guarda las tareas
+      </footer>
+    </main>
+  </body>
+</html>
