@@ -20,7 +20,7 @@ Desde PowerShell, en la carpeta que contiene el `Vagrantfile`:
 
 ```powershell
 cd C:\dev\terraform-crud-tareas
-vagrant up --provider=virtualbox
+vagrant up
 vagrant ssh
 ```
 
@@ -43,7 +43,7 @@ terraform plan -out=crear.tfplan
 ```bash
 terraform apply crear.tfplan
 terraform output
-docker ps --filter name=tareas-terraform-app
+docker ps
 curl http://127.0.0.1:8080/health
 ```
 
@@ -56,7 +56,6 @@ Respuesta esperada:
 ### 4. Acceder desde Windows
 
 - Aplicación: <http://192.168.33.30:8080>.
-- Acceso alternativo: <http://localhost:8080>.
 - API de tareas: <http://192.168.33.30:8080/api/tasks>.
 
 ### 5. Verificar el estado
